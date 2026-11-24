@@ -59,9 +59,9 @@ Compare the original, eroded, and dilated images.
 
 ## Developed By
 
-**Name:** ____________________________
+**Name:** R P Loshini
 
-**Register No:** ______________________
+**Register No:** 212225230155
 
 ## Output
 
