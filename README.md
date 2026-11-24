@@ -57,11 +57,53 @@ Compare the original, eroded, and dilated images.
 
 ## Program
 
-## Developed By
+### Developed By
 
 **Name:** R P Loshini
 
 **Register No:** 212225230155
+
+```
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the dog image in grayscale
+img = cv2.imread(r"C:\Users\acer\DIPT\puppy.jpg", 0)
+
+if img is None:
+    print("Image not found!")
+else:
+    # 1. Create a standard smaller kernel (5x5 instead of 31x31)
+    kernel = np.ones((5, 5), np.uint8)
+
+    # 2. Apply erosion with iterations=1
+    erosion = cv2.erode(img, kernel, iterations=1)
+
+    # 3. Apply dilation with iterations=1
+    dilation = cv2.dilate(img, kernel, iterations=1)
+
+    # Display results
+    plt.figure(figsize=(15, 6))
+
+    plt.subplot(1, 3, 1)
+    plt.imshow(img, cmap='gray')
+    plt.title('Original Dog Image')
+    plt.axis('off')
+
+    plt.subplot(1, 3, 2)
+    plt.imshow(erosion, cmap='gray')
+    plt.title('Erosion')
+    plt.axis('off')
+
+    plt.subplot(1, 3, 3)
+    plt.imshow(dilation, cmap='gray')
+    plt.title('Dilation')
+    plt.axis('off')
+
+    plt.tight_layout()
+    plt.show()
+```
 
 ## Output
 
@@ -83,6 +125,9 @@ Compare the original, eroded, and dilated images.
 - Dilated image is displayed.
 - The thickness of the characters increases.
 - Object boundaries expand outward.
+
+<img width="1097" height="215" alt="image" src="https://github.com/user-attachments/assets/f5c5ef03-bcb9-47eb-bc1c-2214674d813a" />
+
 
 ## Result
 
