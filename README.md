@@ -1,14 +1,13 @@
-# Image Segmentation Using Thresholding Techniques in OpenCV
+# Implementation of Erosion and Dilation Using OpenCV
 
 ## Aim
 
-To segment an image using Global Thresholding, Adaptive Thresholding, and Otsu's Thresholding techniques using Python and OpenCV.
+To write a Python program using OpenCV to perform morphological operations such as Erosion and Dilation on an image.
 
 The program performs the following operations:
 
-- Global Thresholding
-- Adaptive Thresholding
-- Otsu's Thresholding
+- Image Erosion
+- Image Dilation
 
 ## Software Used
 
@@ -26,34 +25,35 @@ Import the required libraries: OpenCV, NumPy, and Matplotlib.
 
 ### Step 2:
 
-Load the input image using OpenCV.
+Create a blank image using NumPy.
 
 ### Step 3:
 
-Convert the input image into grayscale format.
+Insert text onto the image using OpenCV's text drawing function.
 
-### Step 4: Global Thresholding
+### Step 4:
 
-- Select a fixed threshold value.
-- Apply thresholding to separate foreground and background pixels.
-- Display the thresholded image.
+Display the original image.
 
-### Step 5: Adaptive Thresholding
+### Step 5:
 
-- Compute threshold values for small regions of the image.
-- Apply Adaptive Mean Thresholding.
-- Apply Adaptive Gaussian Thresholding.
-- Display the segmented images.
+Create a structuring element (kernel) of suitable size.
 
-### Step 6: Otsu's Thresholding
+### Step 6: Image Erosion
 
-- Automatically determine the optimal threshold value.
-- Apply Otsu's thresholding technique.
-- Display the segmented image.
+- Apply the erosion operation using the created kernel.
+- Remove pixels from the boundaries of foreground objects.
+- Display the eroded image.
 
-### Step 7:
+### Step 7: Image Dilation
 
-Compare the results obtained from Global, Adaptive, and Otsu's thresholding methods.
+- Apply the dilation operation using the same kernel.
+- Add pixels to the boundaries of foreground objects.
+- Display the dilated image.
+
+### Step 8:
+
+Compare the original, eroded, and dilated images.
 
 ## Program
 
@@ -65,34 +65,25 @@ Compare the results obtained from Global, Adaptive, and Otsu's thresholding meth
 
 ## Output
 
-### Original Grayscale Image
+### Original Image
 
-- The grayscale version of the input image is displayed.
-- Serves as the input for thresholding operations.
+- A text image containing characters is displayed.
+- The image serves as the input for morphological processing.
 
-### Global Thresholding
-
-- Original image is displayed.
-- Thresholded image is displayed.
-- A fixed threshold value is used for segmentation.
-- Pixels are classified as foreground or background.
-
-### Adaptive Thresholding
+### Erosion
 
 - Original image is displayed.
-- Adaptive Mean Thresholded image is displayed.
-- Adaptive Gaussian Thresholded image is displayed.
-- Threshold values vary across different regions of the image.
-- Suitable for images with uneven illumination.
+- Eroded image is displayed.
+- The thickness of the characters is reduced.
+- Object boundaries shrink inward.
 
-### Otsu's Thresholding
+### Dilation
 
 - Original image is displayed.
-- Otsu segmented image is displayed.
-- Optimal threshold value is calculated automatically.
-- Produces improved segmentation for bimodal histograms.
-
+- Dilated image is displayed.
+- The thickness of the characters increases.
+- Object boundaries expand outward.
 
 ## Result
 
-Thus, image segmentation is successfully performed using **Global Thresholding, Adaptive Thresholding, and Otsu's Thresholding** techniques in OpenCV. 
+Thus, the morphological operations **Erosion** and **Dilation** are successfully implemented using OpenCV.
